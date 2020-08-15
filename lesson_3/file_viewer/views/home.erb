@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Files</title>
+</head>
+
+<body>
+  <% if params[:sort] == "desc" %>
+    <a href="/">Sort Ascending</a>
+  <% else %>
+    <a href="/?sort=desc">Sort Descending</a>
+  <% end %>
+  <ul>
+    <% @files.each do |file|%>
+      <li><a href=<%= "/#{file}" %>><%= file %></a></li><br>
+    <% end %>
+  </ul>
+</body>
