@@ -1,0 +1,13 @@
+<h1><%= @user.to_s %></h1>
+<ul>
+  <li><%= @users[@user][:email]%>
+  <li><%= @users[@user][:interests].join(', ') %></li>
+</ul>
+<h4>Other Users</h4>
+<ul>
+  <% @users.each do |user, _| %>
+    <% unless user == @user%>
+      <li><a href="/details?user=<%= user.to_s %>"><%= user.to_s %></a></li>
+    <% end %>
+  <% end %>
+</ul>
